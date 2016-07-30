@@ -28,6 +28,23 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<?php wp_head(); ?>
+		
+		
+		<?php 
+		//Dynamic styles ------------------------------------------------------------------------ 
+    $background_image_front_section_1 = get_field( 'background_image_front_section_1',  'option' );
+		$background_image_front_section_1_ratio = ($background_image_front_section_1[height]/$background_image_front_section_1[width])*100;
+		?>
+		<style>	
+			.wrapper_front_section_1:after {
+			  padding-top: <?php echo $background_image_front_section_1_ratio; ?>%;
+			}
+		</style>
+		
+		
+		
+		
+		
 
 		<!-- Drop Google Analytics here -->
 		<!-- end analytics -->
@@ -48,6 +65,10 @@
 					
 					<header class="header" role="banner">
 							
+
+						 <?php get_template_part( 'parts/nav', 'copsub-header' ); ?>
+						
+						
 						 <!-- This navs will be applied to the topbar, above all content 
 							  To see additional nav styles, visit the /parts directory -->
 						 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>

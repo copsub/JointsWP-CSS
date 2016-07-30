@@ -9,6 +9,23 @@ GENERAL STYLES
 *********************/
 
 /*********************
+DEFAULT COLOR STYLES
+*********************/
+.cs-grey-bg {
+  background-color: #e7e7e7;
+}
+.cs-orange-bg {
+  background-color: #FF4F00;
+}
+.cs-black-bg {
+  background-color: #000;
+}
+
+.cs-black-bg-hover:hover {
+  background-color: #000;  
+}
+
+/*********************
 LINK STYLES
 *********************/
 a:link, a:visited:link {
@@ -114,6 +131,88 @@ POSTS & CONTENT STYLES
   .post-password-form input[type="submit"]:hover, .post-password-form input[type="submit"]:focus {
     background: #1583cc;
     color: #fff; }
+
+
+/***************************
+FRONTPAGE STYLES
+***************************/
+.full-width-background {
+  width: 100%;   
+  position: relative;
+  background-position: center top;
+  background-repeat:no-repeat;
+  background-size: 100% !important;  
+}
+
+.wrapper_front_section_1:after {
+  display: block;
+  content: '';
+}
+
+.main_front_section_1_overlay_1 {
+  position: absolute;
+  top: 11.8%;
+  bottom: 62.3%;
+  right: 62.5%;
+  left: 27.5%;
+}
+
+/***************************
+MISSION LANDINGPAGE  STYLES
+***************************/
+
+#content #landing-page-inner-header {
+  padding: 1rem 0rem; }
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  #landing-page-inner-header-l1 {
+    font-weight: bold;
+    font-size:100%;
+  } 
+  #landing-page-inner-header-l2 {
+    color: #FF4F00;
+    font-weight: bold;
+    font-size:80%;
+  } 
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+   #landing-page-inner-header-l1 {
+    font-weight: bold;
+    font-size:180%;
+  } 
+  #landing-page-inner-header-l2 {
+    color: #FF4F00;
+    font-weight: bold;
+    font-size:140%;
+  } 
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+   #landing-page-inner-header-l1 {
+    font-weight: bold;
+    font-size:180%;
+  } 
+  #landing-page-inner-header-l2 {
+    color: #FF4F00;
+    font-weight: bold;
+    font-size:140%;
+  } 
+  
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+
+
 
 /*********************
 IMAGE GALLERY STYLES
