@@ -53,6 +53,54 @@ NAVIGATION STYLES
 .top-bar .title-area {
   z-index: 1; }
 
+ .menu a {
+  color: #000;
+}
+
+.menu .active>a {
+  color: #000;
+  background: #ddd;
+}
+
+.dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 5px inset;
+  border-color: #000 transparent transparent;
+  border-top-style: solid;
+  border-bottom-width: 0;
+  right: 5px;
+  margin-top: -2px;
+}
+
+.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 5px inset;
+  border-color: transparent transparent transparent #000;
+  border-left-style: solid;
+  border-right-width: 0;
+}
+
+.is-accordion-submenu-parent>a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: 6px inset;
+  border-color: #000 transparent transparent;
+  border-top-style: solid;
+  border-bottom-width: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 1rem;
+}
+
 .off-canvas-list ul {
   margin-left: 0; }
   .off-canvas-list ul li a {
