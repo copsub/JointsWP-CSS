@@ -1,23 +1,27 @@
 <?php
 /*
-Template Name: Full Width Frontpage
+Template Name: Full Width (No Sidebar)
 */
-
-$background_image_front_section_1 = get_field( 'background_image_front_section_1',  'option' );
-
 ?>
+
 <?php get_header(); ?>
-
-<div id="content">
-	<div class="row expanded columns full-width-background wrapper_front_section_1" style="background-image:url('<?php echo $background_image_front_section_1[url] ?>');">
-			<div class="main_front_section_1_overlay_1" style="border: 1px solid black;">hhh
-		</div>
+			
+	<div id="content">
 	
-	</div>
-	<div class="row expanded columns full-width-background wrapper_front_section_1" style="background-image:url('<?php echo $background_image_front_section_1[url] ?>');">
-	</div>
+		<div id="inner-content" class="row">
+	
+		    <main id="main" class="large-12 medium-12 columns" role="main">
+				
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-</div>
-	<!-- end #content -->
+					<?php get_template_part( 'parts/loop', 'page' ); ?>
+					
+				<?php endwhile; endif; ?>							
 
-	<?php get_footer(); ?>
+			</main> <!-- end #main -->
+		    
+		</div> <!-- end #inner-content -->
+	
+	</div> <!-- end #content -->
+
+<?php get_footer(); ?>

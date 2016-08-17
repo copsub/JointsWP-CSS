@@ -8,6 +8,10 @@ Stylesheet: Main Stylesheet
 GENERAL STYLES
 *********************/
 
+body  {
+  font-family: helvetica, sans-serif;
+}
+
 /*********************
 DEFAULT COLOR STYLES
 *********************/
@@ -196,18 +200,7 @@ FRONTPAGE STYLES
   background-size: 100% !important;  
 }
 
-.wrapper_front_section_1:after {
-  display: block;
-  content: '';
-}
 
-.main_front_section_1_overlay_1 {
-  position: absolute;
-  top: 11.8%;
-  bottom: 62.3%;
-  right: 62.5%;
-  left: 27.5%;
-}
 
 /***************************
 MISSION LANDINGPAGE  STYLES
