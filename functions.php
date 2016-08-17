@@ -23,6 +23,10 @@ require_once(get_template_directory().'/assets/functions/page-navi.php');
 // Adds support for multiple languages
 require_once(get_template_directory().'/assets/translation/translation.php'); 
 
+// Use this as a template for advanced custom fields
+ require_once(get_template_directory().'/assets/functions/advanced-custom-fields.php');
+
+
 // Remove 4.2 Emoji Support
 // require_once(get_template_directory().'/assets/functions/disable-emoji.php'); 
 
