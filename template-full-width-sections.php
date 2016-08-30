@@ -9,8 +9,8 @@ global $post;
 <div id="content">
 	<?php while ( have_posts() ) : the_post(); ?>
 <!--
-		<h1><?php the_title(); ?></h1>
-		<?php the_content(); ?>
+		<h1><?php //the_title(); ?></h1>
+		<?php //the_content(); ?>
 -->
 
 		<?php 
@@ -27,38 +27,58 @@ global $post;
 					$background_image = get_sub_field('background_image');
 					$margin_top = get_sub_field('margin_top');
 					$margin_bottom = get_sub_field('margin_bottom');
+					$sect_type_selector = get_sub_field('sect_type_selector');
 					?>
 					<?php if ($margin_top > 0):?><div class="margin_top_main_section_<?php echo $mainsection_index ?>"></div><?php endif; ?>
 					<div class=" full-width-background wrapper_main_section_<?php echo $mainsection_index ?>">
 					<?php 
-					// check for rows (sub repeater)
-	        $overlaysection_index = 0;
-					if( have_rows('overlay') ):
-						// loop through rows (sub repeater)
-						while( have_rows('overlay') ): the_row();
-							$sub_section_active = get_sub_field('sub_section_active');
-							$text = get_sub_field('text');
-							$link_type = get_sub_field('link_type');
-							$link_on_site = get_sub_field('link_on_site');
-							$link_off_site = get_sub_field('link_off_site');
-							if ($link_type == 'onsite'):
-							 $link = $link_on_site;
-							else:
-							 $link = $link_off_site;
-							endif;
-							if ($sub_section_active): 
-							// display each item as a list - with a class of completed ( if completed )
-							?>
-							<?php if ($link_type <> 'none'): ?> <a href="<?php echo $link ?>"> <?php endif; //Loverlay Link?> 
-								<div class="main_front_section_<?php echo $mainsection_index ?>_overlay_<?php echo $overlaysection_index ?>">
-								<?php echo $text; ?>
-							</div>
-							<?php if ($link_type <> 'none'): ?>	</a> <?php endif; //Overlay link?>
+					switch ($sect_type_selector) {
+    				case 'normal':
+							// check for rows (sub repeater)
+							$overlaysection_index = 0;
+							if( have_rows('overlay') ):
+								// loop through rows (sub repeater)
+								while( have_rows('overlay') ): the_row();
+									$sub_section_active = get_sub_field('sub_section_active');
+									$text = get_sub_field('text');
+									$link_type = get_sub_field('link_type');
+									$link_on_site = get_sub_field('link_on_site');
+									$link_off_site = get_sub_field('link_off_site');
+									if ($link_type == 'onsite'):
+										$link = $link_on_site;
+									else:
+									$link = $link_off_site;
+									endif;
+									if ($sub_section_active): 	
+										if ($link_type <> 'none'): ?> <a href="<?php echo $link ?>"> <?php endif; //Loverlay Link?> 
+										<div class="main_front_section_<?php echo $mainsection_index ?>_overlay_<?php echo $overlaysection_index ?>">
+											<?php echo $text; ?>
+										</div>
+										<?php if ($link_type <> 'none'): ?>	</a> <?php endif; //Overlay link?>
+										<?php
+									endif;
+									$overlaysection_index++;
+								endwhile; ?>
+							<?php endif; ?>
 						<?php
-							endif;
-	          $overlaysection_index++;
-	          endwhile; ?>
-					<?php endif; //if( get_sub_field('items') ): ?>
+						break;
+    				case 'widgetarea':					
+						?>	
+						<div class="row small-up-1 medium-up-2 large-up-3">
+
+								
+								<?php if ( is_active_sidebar( 'widgetdynamicarea' . get_the_ID() . $mainsection_index ) ) : ?>
+								<?php dynamic_sidebar( 'widgetdynamicarea' . get_the_ID() . $mainsection_index ); ?>
+								<?php endif; ?>
+								
+						
+						</div>
+						<?php	
+						break;
+						default:
+					}
+
+												?>
 					</div>
 					<?php if ($margin_bottom > 0):?><div class="margin_bottom_main_section_<?php echo $mainsection_index ?>"></div><?php endif; ?>
 					<?php endif; ?>

@@ -389,8 +389,24 @@ SIDEBARS & ASIDES
 *********************/
 .widget ul {
   margin: 0; }
-  .widget ul li {
-    list-style: none; }
+.widget ul li {
+    list-style: none; 
+}
+.widget ul li a {
+   color: black; 
+}
+
+.widget {
+  margin: 0 0 3% 0;
+}
+
+
+.widget-title {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  padding: 1% 0 1% 3%;
+}
 
 /*********************
 FOOTER STYLES

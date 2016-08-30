@@ -24,8 +24,10 @@ require_once(get_template_directory().'/assets/functions/page-navi.php');
 require_once(get_template_directory().'/assets/translation/translation.php'); 
 
 // Use this as a template for advanced custom fields
- require_once(get_template_directory().'/assets/functions/advanced-custom-fields.php');
+require_once(get_template_directory().'/assets/functions/advanced-custom-fields.php');
 
+// Adds dynamic widget areas
+require_once(get_template_directory().'/assets/functions/dynamic-widget-areas.php');
 
 // Remove 4.2 Emoji Support
 // require_once(get_template_directory().'/assets/functions/disable-emoji.php'); 
@@ -44,3 +46,5 @@ require_once(get_template_directory().'/assets/translation/translation.php');
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/assets/functions/admin.php'); 
+
+
