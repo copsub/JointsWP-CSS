@@ -2,12 +2,37 @@
 
 if( function_exists('acf_add_local_field_group') ):
 
+$sect_type_selector_types = array ( // ---------------------------------- Options (Section Selector Types)
+	'normal' => 'Normal',
+	'grid' => 'Grid',
+	'widgetarea' => 'Widget Area',
+	);
+$sect_type_selector_types_dv = array (
+	0 => 'grid'
+	);
+
+$section_background_color_types = array (
+	'#000000' => 'Black',
+	'#FFFFFF' => 'White',
+	'#FF4F00' => 'CS-Orange',
+	'#e7e7e7' => 'CS-Grey',
+	'transparent' => 'Transparent',
+);
+$section_background_color_dv = array (
+	0 => 'transparent',
+);
+
 $hover_layout_types = array ( // ---------------------------------- Options (Hover Layout Types)
 	'none' => 'None',
 	'csgrey-white' => 'CS-Grey & White',
 	'csgrey-black' => 'CS-Grey & Black',
 	'image' => 'Image',
 	);
+$hover_layout_types_dv = array (
+	0 => 'none'
+);
+
+//###############################################################################################################################
 
 acf_add_local_field_group(array (
 	'key' => 'group_57a258b0ce8a5',
@@ -32,6 +57,7 @@ acf_add_local_field_group(array (
 			'layout' => 'block',
 			'button_label' => 'Add Row',
 			'sub_fields' => array (
+
 				array ( // ---------------------------------- Field (Section Active)
 					'key' => 'field_57a4d7f795c38',
 					'label' => 'Section Active',
@@ -48,6 +74,7 @@ acf_add_local_field_group(array (
 					'message' => '',
 					'default_value' => 0,
 				),
+
 				array ( // ---------------------------------- Field (Section Type Selector)
 					'key' => 'field_Section_type_selector',
 					'label' => 'Section Type Selector',
@@ -61,13 +88,8 @@ acf_add_local_field_group(array (
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
-						'normal' => 'Normal',
-						'widgetarea' => 'Widget Area',
-					),
-					'default_value' => array (
-						0 => 'normal',
-					),
+					'choices' => $sect_type_selector_types,
+					'default_value' => $sect_type_selector_types_dv,
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
@@ -75,6 +97,7 @@ acf_add_local_field_group(array (
 					'return_format' => 'value',
 					'placeholder' => '',
 				),	
+
 				array ( // ---------------------------------- Field (Section Description)
 					'key' => 'field_57a7a13764b90',
 					'label' => 'Section Description',
@@ -96,6 +119,7 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
+
 				array ( // ---------------------------------- Field (Background Image)
 					'key' => 'field_57a367386db2e',
 					'label' => 'Background Image',
@@ -120,6 +144,7 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
+	
 				array ( // ---------------------------------- Field (Background Color)
 					'key' => 'field_section_background_color',
 					'label' => 'Background Color',
@@ -133,16 +158,8 @@ acf_add_local_field_group(array (
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
-						'#000000' => 'Black',
-						'#FFFFFF' => 'White',
-						'#FF4F00' => 'CS-Orange',
-						'#e7e7e7' => 'CS-Grey',
-						'transparent' => 'Transparent',
-					),
-					'default_value' => array (
-						0 => 'transparent',
-					),
+					'choices' => $section_background_color_types,
+					'default_value' => $section_background_color_dv,
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
@@ -150,6 +167,7 @@ acf_add_local_field_group(array (
 					'return_format' => 'value',
 					'placeholder' => '',
 				),
+	
 				array ( // ---------------------------------- Field (Margin Top)
 					'key' => 'field_section_margin_top',
 					'label' => 'Margin Top',
@@ -192,6 +210,63 @@ acf_add_local_field_group(array (
 					'max' => 50,
 					'step' => '0.1',
 				),
+	
+	
+	
+				array ( //======================================== Repeater (Column)
+					'key' => 'field_repeater_column',
+					'label' => 'Column',
+					'name' => 'column',
+					'type' => 'repeater',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+								'field' => 'field_Section_type_selector',
+								'operator' => '==',
+								'value' => 'grid',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => 100,
+						'class' => '',
+						'id' => '',
+					),
+					'collapsed' => 'field_column_description',
+					'min' => '',
+					'max' => '',
+					'layout' => 'block',
+					'button_label' => 'Add Column',
+					'sub_fields' => array (
+						array ( // ---------------------------------- Field (Column Description)
+							'key' => 'field_column_description',
+							'label' => 'Column Description',
+							'name' => 'column_description',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '60',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+							'readonly' => 0,
+							'disabled' => 0,
+						),
+					),
+				),
+	
+	
+	
+	
 				array ( //======================================== Repeater (Overlay)
 					'key' => 'field_57a4d86c44a1c',
 					'label' => 'Overlay',
@@ -235,33 +310,6 @@ acf_add_local_field_group(array (
 							'message' => '',
 							'default_value' => 0,
 						),
-// 						array ( // ---------------------------------- Field (Overlay Type Selector)
-// 							'key' => 'field_Overlay__type_selector',
-// 							'label' => 'Overlay Type Selector',
-// 							'name' => 'Overlay__type_selector',
-// 							'type' => 'select',
-// 							'instructions' => '',
-// 							'required' => 0,
-// 							'conditional_logic' => 0,
-// 							'wrapper' => array (
-// 								'width' => '30',
-// 								'class' => '',
-// 								'id' => '',
-// 							),
-// 							'choices' => array (
-// 								'normal' => 'Normal',
-// 								'widgetarea' => 'Widget Area',
-// 							),
-// 							'default_value' => array (
-// 								0 => 'normal',
-// 							),
-// 							'allow_null' => 0,
-// 							'multiple' => 0,
-// 							'ui' => 0,
-// 							'ajax' => 0,
-// 							'return_format' => 'value',
-// 							'placeholder' => '',
-// 						),	
 						array ( // ---------------------------------- Field (Overlay Description)
 							'key' => 'field_overlay_description',
 							'label' => 'Overlay Description',
@@ -400,6 +448,33 @@ acf_add_local_field_group(array (
 							'placement' => 'top',
 							'endpoint' => 0,
 						),
+						array ( // ---------------------------------- Field (Overlay Type Selector)
+							'key' => 'field_Overlay_type_selector',
+							'label' => 'Overlay Type Selector',
+							'name' => 'Overlay_type_selector',
+							'type' => 'select',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array (
+								'width' => '30',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array (
+								'normal' => 'Normal',
+								'widgetarea' => 'Widget Area',
+							),
+							'default_value' => array (
+								0 => 'normal',
+							),
+							'allow_null' => 0,
+							'multiple' => 0,
+							'ui' => 0,
+							'ajax' => 0,
+							'return_format' => 'value',
+							'placeholder' => '',
+						),	
 						array ( // ---------------------------------- Field (Text)
 							'key' => 'field_57a79e0191df7',
 							'label' => 'Text',
@@ -407,7 +482,15 @@ acf_add_local_field_group(array (
 							'type' => 'textarea',
 							'instructions' => '',
 							'required' => 0,
-							'conditional_logic' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_Overlay_type_selector',
+										'operator' => '==',
+										'value' => 'normal',
+									),
+								),
+							),
 							'wrapper' => array (
 								'width' => '100',
 								'class' => '',
@@ -428,7 +511,15 @@ acf_add_local_field_group(array (
 							'type' => 'select',
 							'instructions' => '',
 							'required' => 1,
-							'conditional_logic' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_Overlay_type_selector',
+										'operator' => '==',
+										'value' => 'normal',
+									),
+								),
+							),
 							'wrapper' => array (
 								'width' => '40',
 								'class' => '',
@@ -457,7 +548,15 @@ acf_add_local_field_group(array (
 							'type' => 'select',
 							'instructions' => '',
 							'required' => 1,
-							'conditional_logic' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_Overlay_type_selector',
+										'operator' => '==',
+										'value' => 'normal',
+									),
+								),
+							),
 							'wrapper' => array (
 								'width' => '30',
 								'class' => '',
@@ -491,7 +590,15 @@ acf_add_local_field_group(array (
 							'type' => 'select',
 							'instructions' => '',
 							'required' => 1,
-							'conditional_logic' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_Overlay_type_selector',
+										'operator' => '==',
+										'value' => 'normal',
+									),
+								),
+							),
 							'wrapper' => array (
 								'width' => '30',
 								'class' => '',
@@ -518,7 +625,15 @@ acf_add_local_field_group(array (
 							'type' => 'number',
 							'instructions' => '',
 							'required' => 1,
-							'conditional_logic' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_Overlay_type_selector',
+										'operator' => '==',
+										'value' => 'normal',
+									),
+								),
+							),
 							'wrapper' => array (
 								'width' => '30',
 								'class' => '',
@@ -539,7 +654,15 @@ acf_add_local_field_group(array (
 							'type' => 'number',
 							'instructions' => '',
 							'required' => 1,
-							'conditional_logic' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_Overlay_type_selector',
+										'operator' => '==',
+										'value' => 'normal',
+									),
+								),
+							),
 							'wrapper' => array (
 								'width' => '25',
 								'class' => '',
@@ -553,7 +676,6 @@ acf_add_local_field_group(array (
 							'max' => 50,
 							'step' => '0.1',
 						),
-
 							array ( // ---------------------------------- Field (Overlay Padding)
 							'key' => 'field_overlay_padding',
 							'label' => 'Overlay Padding',
@@ -582,7 +704,15 @@ acf_add_local_field_group(array (
 							'type' => 'select',
 							'instructions' => '',
 							'required' => 0,
-							'conditional_logic' => 0,
+							'conditional_logic' => array (
+								array (
+									array (
+										'field' => 'field_Overlay_type_selector',
+										'operator' => '==',
+										'value' => 'normal',
+									),
+								),
+							),
 							'wrapper' => array (
 								'width' => '40',
 								'class' => '',

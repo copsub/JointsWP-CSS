@@ -7,13 +7,18 @@ if( have_rows('mainsection', $post->ID ) ):
 	// loop through rows (parent repeater)
 	while( have_rows('mainsection', $post->ID ) ): the_row(); 
 		$background_image = get_sub_field('background_image');
-		$background_image_ratio = ($background_image[height]/$background_image[width])*100;
+		if ($background_image[width] <> 0) {
+			$background_image_ratio = ($background_image[height]/$background_image[width])*100;
+		} else {
+			$background_image_ratio = 0;
+		} 
 		$background_color = get_sub_field('background_color');
 		$margin_top = get_sub_field('margin_top');
 		$margin_bottom = get_sub_field('margin_bottom');
 		?>
 			.wrapper_main_section_<?php echo $mainsection_index ?> {
 				background-image: url('<?php echo $background_image[url] ?>');
+				background-color: <?php echo $background_color; ?>;
 			}	
 			.wrapper_main_section_<?php echo $mainsection_index ?>:after {
 			  padding-top: <?php echo $background_image_ratio; ?>%;
