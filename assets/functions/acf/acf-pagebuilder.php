@@ -10,11 +10,11 @@ require_once(get_template_directory().'/assets/functions/acf/acf-repeater-column
 require_once(get_template_directory().'/assets/functions/acf/acf-repeater-overlay.php'); 
 
 acf_add_local_field_group(array (
-	'key' => 'group_57a258b0ce8a5',
+	'key' => 'group_sections_page',
 	'title' => 'Sections Page',
 	'fields' => array (
 		array ( //======================================= Repeater (Mainsection)
-			'key' => 'field_57a367136db2d',
+			'key' => 'field_mainsection_repeater',
 			'label' => 'Mainsection',
 			'name' => 'mainsection',
 			'type' => 'repeater',
