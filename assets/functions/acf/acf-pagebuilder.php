@@ -26,7 +26,7 @@ acf_add_local_field_group(array (
 				'class' => '',
 				'id' => '',
 			),
-			'collapsed' => 'field_57a7a13764b90',
+			'collapsed' => 'field_section_description_text',
 			'min' => '',
 			'max' => '',
 			'layout' => 'block',
@@ -34,7 +34,7 @@ acf_add_local_field_group(array (
 			'sub_fields' => array (
 
 				array ( // ---------------------------------- Field (Section Active)
-					'key' => 'field_57a4d7f795c38',
+					'key' => 'field_section_active_true_false',
 					'label' => 'Section Active',
 					'name' => 'section_active',
 					'type' => 'true_false',
@@ -51,7 +51,7 @@ acf_add_local_field_group(array (
 				),
 
 				array ( // ---------------------------------- Field (Section Type Selector)
-					'key' => 'field_Section_type_selector',
+					'key' => 'field_section_type_selector_select',
 					'label' => 'Section Type Selector',
 					'name' => 'sect_type_selector',
 					'type' => 'select',
@@ -74,7 +74,7 @@ acf_add_local_field_group(array (
 				),	
 
 				array ( // ---------------------------------- Field (Section Description)
-					'key' => 'field_57a7a13764b90',
+					'key' => 'field_section_description_text',
 					'label' => 'Section Description',
 					'name' => 'section_description',
 					'type' => 'text',
@@ -96,7 +96,7 @@ acf_add_local_field_group(array (
 				),
 
 				array ( // ---------------------------------- Field (Background Image)
-					'key' => 'field_57a367386db2e',
+					'key' => 'field_background_image_image',
 					'label' => 'Background Image',
 					'name' => 'background_image',
 					'type' => 'image',
@@ -121,7 +121,7 @@ acf_add_local_field_group(array (
 				),
 	
 				array ( // ---------------------------------- Field (Background Color)
-					'key' => 'field_section_background_color',
+					'key' => 'field_section_background_color_select',
 					'label' => 'Background Color',
 					'name' => 'background_color',
 					'type' => 'select',
@@ -144,7 +144,7 @@ acf_add_local_field_group(array (
 				),
 	
 				array ( // ---------------------------------- Field (Margin Top)
-					'key' => 'field_section_margin_top',
+					'key' => 'field_section_margin_top_number',
 					'label' => 'Margin Top',
 					'name' => 'margin_top',
 					'type' => 'number',
@@ -165,7 +165,7 @@ acf_add_local_field_group(array (
 					'step' => '0.1',
 				),						
 				array ( // ---------------------------------- Field (Margin Bottom)
-					'key' => 'field_section_margin_bottom',
+					'key' => 'field_section_margin_bottom_number',
 					'label' => 'Margin Bottom',
 					'name' => 'margin_bottom',
 					'type' => 'number',
