@@ -82,6 +82,27 @@ global $post;
 								</div>
 								<?php	
 							break;
+							case 'carousel':
+								?>
+								<div class=" full-width-background wrapper_main_section_<?php echo $mainsection_index ?>">
+									<div class="row small-up-1 medium-up-2 large-up-3">
+										<div class="slick-carousel">
+											<?php
+											$carouselsection_index = 0;
+											if( have_rows('carousel') ):
+												// loop through rows (sub repeater)
+												while( have_rows('carousel') ): the_row();
+													$image = get_sub_field('image');
+													$url = $image['url'];
+													echo "<image src='$url' />";
+													$carouselsection_index++;
+												endwhile; ?>
+											<?php endif; ?>
+										</div>
+									</div>
+								</div>
+								<?php	
+							break;
 							default:
 						}	?>
 							

@@ -3,6 +3,7 @@ $sect_type_selector_types = array ( // ---------------------------------- Option
 	'normal' => 'Normal',
 	'grid' => 'Grid',
 	'widgetarea' => 'Widget Area',
+	'carousel' => 'Carousel'
 	);
 $sect_type_selector_types_dv = array (
 	0 => 'grid'

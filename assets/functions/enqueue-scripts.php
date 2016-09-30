@@ -7,6 +7,9 @@ function site_scripts() {
     
     // Adding Foundation scripts file in the footer
     wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/vendor/foundation-sites/dist/foundation.min.js', array( 'jquery' ), '6.0', true );
+
+    // Add Slick JS
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/vendor/slick/slick.min.js', array(), '', true );
     
     // Adding scripts file in the footer
     wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', true );
@@ -17,6 +20,10 @@ function site_scripts() {
 	// Select which grid system you want to use (Foundation Grid by default)
     wp_enqueue_style( 'foundation-css', get_template_directory_uri() . '/vendor/foundation-sites/dist/foundation.min.css', array(), '', 'all' );
      //wp_enqueue_style( 'foundation-css', get_template_directory_uri() . '/vendor/foundation-sites/dist/foundation-flex.min.css', array(), '', 'all' );
+
+    // Load Slick CSS
+    wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/vendor/slick/slick.css', array(), '', 'all' );
+    wp_enqueue_style( 'slick-theme-css', get_template_directory_uri() . '/vendor/slick/slick-theme.css', array(), '', 'all' );
 
     // Register main stylesheet
     wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/style.css', array(), '', 'all' );
