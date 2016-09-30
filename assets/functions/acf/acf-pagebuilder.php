@@ -8,6 +8,8 @@ require_once(get_template_directory().'/assets/functions/acf/acf-settings.php');
 require_once(get_template_directory().'/assets/functions/acf/acf-repeater-column.php'); 
 // Responsive -> Overlay setup
 require_once(get_template_directory().'/assets/functions/acf/acf-repeater-overlay.php'); 
+// Carousel
+require_once(get_template_directory().'/assets/functions/acf/acf-repeater-carousel.php');
 
 acf_add_local_field_group(array (
 	'key' => 'group_sections_page',
@@ -189,6 +191,8 @@ acf_add_local_field_group(array (
 				$field_repeater_column_array,
 				// Responsive -> Overlay setup
 				$field_repeater_overlay_array,
+				// Carousel
+				$field_repeater_carousel_array,
 				),
 			),
 		),

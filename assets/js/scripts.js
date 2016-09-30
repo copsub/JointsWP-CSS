@@ -21,4 +21,9 @@ jQuery(document).ready(function() {
     }
   });
 
+
+  // Initialise Slick
+  jQuery('.slick-carousel').slick({
+  });
+
 });
