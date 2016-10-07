@@ -33,10 +33,56 @@ global $post;
 						switch ($sect_type_selector) {
 							case 'grid': 
 								?>
-								<div class="row wrapper_main_section_<?php echo $mainsection_index ?>">
+								<div class="row wrapper_main_section_<?php echo $mainsection_index ?>"><?php
+								// check for rows (sub repeater)
+								$columnsection_index = 0;
+								if( have_rows('column') ):
+									// loop through rows (sub repeater)
+									while( have_rows('column') ): the_row();
+										$column_width_small = get_sub_field('column_width_small');
+										$column_width_medium = get_sub_field('column_width_medium');
+										$column_width_large = get_sub_field('column_width_large');
+										$column_type_selector = get_sub_field('column_type_selector');
+										?>
+										<div class="small-<?php echo $column_width_small; ?> medium-<?php echo $column_width_medium; ?> large-<?php echo $column_width_large; ?> columns">
+<?php
+														switch ($column_type_selector) {
+							case 'carousel': 
 								
-									<?php echo "test"?>
+								?>
+											
+											
+											<div class="slick-carousel">
+												<?php
+												$carouselsection_index = 0;
+												if( have_rows('carousel') ):
+													// loop through rows (sub repeater)
+													while( have_rows('carousel') ): the_row();
+														$image = get_sub_field('image');
+														$url = $image['url'];
+														echo "<image src='$url' />";
+														$carouselsection_index++;
+													endwhile; ?>
+												<?php endif; ?>
+											</div>
+											<?php
+																
+																break;
+															default:
+														}
+																
+																?>
+											
+											
+										</div>
+									
+									<?php
+										
 
+				
+										$columnsection_index++;
+									endwhile; ?>
+								<?php endif; ?>
 								</div>
 								<?php
 							break;							
