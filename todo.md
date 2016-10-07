@@ -9,6 +9,7 @@ Theme todo:
 	
 # All images in theme
 	Use the interchange function of foundation to load smaler images on smaler screens
-  http://foundation.zurb.com/sites/docs/interchange.html
+  	http://foundation.zurb.com/sites/docs/interchange.html
+  	Setup Wordpress so it automatically creates the correct imagessizes
 	
 	
