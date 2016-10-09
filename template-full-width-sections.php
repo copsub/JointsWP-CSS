@@ -27,13 +27,17 @@ global $post;
 						$margin_top = get_sub_field('margin_top');
 						$margin_bottom = get_sub_field('margin_bottom');
 						$sect_type_selector = get_sub_field('sect_type_selector');
+						$section_fullwidth = get_sub_field('section_fullwidth');
+						if ($section_fullwidth):
+				 			$section_fullwidth = "expanded";
+						endif;
 						?>
 						<?php if ($margin_top > 0):?><div class="margin_top_main_section_<?php echo $mainsection_index ?>"></div><?php endif; ?>
 						<?php 
 						switch ($sect_type_selector) {
 							case 'grid': 
 								?>
-								<div class="row wrapper_main_section_<?php echo $mainsection_index ?>"><?php
+								<div class="row <?php echo $section_fullwidth; ?> wrapper_main_section_<?php echo $mainsection_index ?>"><?php
 								// check for rows (sub repeater)
 								$columnsection_index = 0;
 								if( have_rows('column') ):
@@ -46,32 +50,30 @@ global $post;
 										?>
 										<div class="small-<?php echo $column_width_small; ?> medium-<?php echo $column_width_medium; ?> large-<?php echo $column_width_large; ?> columns">
 <?php
-														switch ($column_type_selector) {
-							case 'carousel': 
-								
-								?>
-											
-											
-											<div class="slick-carousel">
+										switch ($column_type_selector) {
+											case 'carousel': 
+?>
+												<div class="slick-carousel">
 												<?php
-												$carouselsection_index = 0;
-												if( have_rows('carousel') ):
-													// loop through rows (sub repeater)
-													while( have_rows('carousel') ): the_row();
-														$image = get_sub_field('image');
-														$url = $image['url'];
-														echo "<image src='$url' />";
-														$carouselsection_index++;
-													endwhile; ?>
-												<?php endif; ?>
-											</div>
-											<?php
-																
-																break;
-															default:
-														}
-																
-																?>
+													$carouselsection_index = 0;
+													if( have_rows('carousel') ):
+														// loop through rows (sub repeater)
+														while( have_rows('carousel') ): the_row();
+															$image = get_sub_field('image');
+															$url = $image['url'];
+															echo "<image src='$url' />";
+															$carouselsection_index++;
+														endwhile; ?>
+													<?php endif; ?>
+												</div>
+												<?php
+											break;
+											case 'normal':
+												echo '<div style="background-color:#999;">hhh</div>';
+											break;
+											default:
+										}
+										?>
 											
 											
 										</div>

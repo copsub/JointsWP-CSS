@@ -200,7 +200,9 @@ FRONTPAGE STYLES
   background-size: 100% !important;  
 }
 
-
+.expanded div { /* correct full width (removed padding) */
+  padding: 0;
+}
 
 /***************************
 MISSION LANDINGPAGE  STYLES
