@@ -46,6 +46,27 @@ $field_repeater_carousel_array = array ( //=====================================
 			'maxlength' => '',
 			'readonly' => 0,
 			'disabled' => 0,
+		),
+		array ( // ---------------------------------- Field (Custom HTML)
+			'key' => 'field_carousel_custom_html',
+			'label' => 'Custom HTML',
+			'name' => 'custom_html',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '60',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
 		)
 	),
 );
