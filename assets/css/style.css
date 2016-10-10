@@ -493,3 +493,11 @@ to display none.
   .respond-form,
   nav {
     display: none; } }
+
+
+/*********************
+SLICK CAROUSEL STYLES
+*********************/
+.slick-prev::before, .slick-next::before {
+  color: #555;
+}
