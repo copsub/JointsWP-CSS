@@ -142,10 +142,16 @@ global $post;
 												while( have_rows('carousel') ): the_row();
 													$image = get_sub_field('image');
 													$url = $image['url'];
+
+													echo "<div>";
+													echo get_sub_field('custom_html');
 													echo "<image src='$url' />";
+													echo "</div>";
+
 													$carouselsection_index++;
 												endwhile; ?>
 											<?php endif; ?>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -153,15 +159,7 @@ global $post;
 							break;
 							default:
 						}	?>
-							
-							
-							
-							
-							
-					
-				
-				
-				
+
 						<?php if ($margin_bottom > 0):?><div class="margin_bottom_main_section_<?php echo $mainsection_index ?>"></div><?php endif; ?>
 					<?php endif; ?>
 				
