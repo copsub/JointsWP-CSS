@@ -52,7 +52,7 @@ global $post;
 <?php
 										switch ($column_type_selector) {
 											case 'carousel': 
-?>
+?>											<div class="slick-container">
 												<div class="slick-carousel">
 												<?php
 													$carouselsection_index = 0;
@@ -65,6 +65,7 @@ global $post;
 															$carouselsection_index++;
 														endwhile; ?>
 													<?php endif; ?>
+												</div>
 												</div>
 												<?php
 											break;

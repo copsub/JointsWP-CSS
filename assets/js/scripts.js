@@ -24,6 +24,9 @@ jQuery(document).ready(function() {
 
   // Initialise Slick
   jQuery('.slick-carousel').slick({
+     variableWidth: true,
+     centerMode: true
   });
 
+	
 });
