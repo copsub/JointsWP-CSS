@@ -24,8 +24,11 @@ jQuery(document).ready(function() {
 
   // Initialise Slick
   jQuery('.slick-carousel').slick({
-     variableWidth: true,
-     centerMode: true
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear',
   });
 
 	

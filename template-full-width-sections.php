@@ -52,7 +52,8 @@ global $post;
 <?php
 										switch ($column_type_selector) {
 											case 'carousel': 
-?>											<div class="slick-container">
+?>
+											
 												<div class="slick-carousel">
 												<?php
 													$carouselsection_index = 0;
@@ -61,11 +62,14 @@ global $post;
 														while( have_rows('carousel') ): the_row();
 															$image = get_sub_field('image');
 															$url = $image['url'];
-															echo "<image src='$url' />";
+?>
+													<div class="slick-carousel-slide" style="background-image: url('<?php echo $url; ?>');">
+														&nbsp;
+													</div>
+<?php
 															$carouselsection_index++;
 														endwhile; ?>
 													<?php endif; ?>
-												</div>
 												</div>
 												<?php
 											break;
