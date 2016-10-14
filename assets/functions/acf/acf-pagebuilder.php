@@ -52,6 +52,23 @@ acf_add_local_field_group(array (
 					'default_value' => 0,
 				),
 
+				array ( // ---------------------------------- Field (Section Active)
+					'key' => 'field_section_fullwidth_true_false',
+					'label' => 'Section Full Width',
+					'name' => 'section_fullwidth',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => 10,
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 0,
+				),
+
 				array ( // ---------------------------------- Field (Section Type Selector)
 					'key' => 'field_section_type_selector_select',
 					'label' => 'Section Type Selector',
@@ -84,7 +101,7 @@ acf_add_local_field_group(array (
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array (
-						'width' => '50',
+						'width' => '40',
 						'class' => '',
 						'id' => '',
 					),

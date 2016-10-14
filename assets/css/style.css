@@ -200,7 +200,9 @@ FRONTPAGE STYLES
   background-size: 100% !important;  
 }
 
-
+.expanded div { /* correct full width (removed padding) */
+  padding: 0;
+}
 
 /***************************
 MISSION LANDINGPAGE  STYLES
@@ -501,3 +503,49 @@ SLICK CAROUSEL STYLES
 .slick-prev::before, .slick-next::before {
   color: #555;
 }
+
+.slick-prev {
+  left: 10px;
+  z-index: 10000;
+}
+
+.slick-next {
+  right: 10px;
+  z-index: 10000;
+}
+
+.slick-carousel-slide {
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: contain;
+}
+
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .slick-carousel-slide {
+    height: 20em; 
+  }
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .slick-carousel-slide {
+    height: 30em; 
+  }
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+  .slick-carousel-slide {
+    height: 40em; 
+  }
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
