@@ -24,7 +24,7 @@ $field_repeater_carousel_array = array ( //=====================================
 	'min' => '',
 	'max' => '',
 	'layout' => 'block',
-	'button_label' => 'Add Image',
+	'button_label' => 'Add Slide',
 	'sub_fields' => array (
 		array ( // ---------------------------------- Field (Image)
 			'key' => 'field_carousel_image',

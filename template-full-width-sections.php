@@ -49,11 +49,10 @@ global $post;
 										$column_type_selector = get_sub_field('column_type_selector');
 										?>
 										<div class="small-<?php echo $column_width_small; ?> medium-<?php echo $column_width_medium; ?> large-<?php echo $column_width_large; ?> columns">
-<?php
+										<?php
 										switch ($column_type_selector) {
 											case 'carousel': 
-?>
-											
+												?>											
 												<div class="slick-carousel">
 												<?php
 													$carouselsection_index = 0;
@@ -62,11 +61,14 @@ global $post;
 														while( have_rows('carousel') ): the_row();
 															$image = get_sub_field('image');
 															$url = $image['url'];
-?>
-													<div class="slick-carousel-slide" style="background-image: url('<?php echo $url; ?>');">
-														&nbsp;
-													</div>
-<?php
+															$background_color_carousel_slide = get_sub_field('background_color_carousel_slide');
+															$textfield_column_carousel_slide_text = get_sub_field('textfield_column_carousel_slide_text');
+															$background_size_carousel_slide = get_sub_field('background_size_carousel_slide');
+														?>
+														<div class="slick-carousel-slide" style="background-image: url('<?php echo $url; ?>');background-color:<?php echo $background_color_carousel_slide; ?>;  background-size: <?php echo $background_size_carousel_slide; ?>;">
+															<?php echo $textfield_column_carousel_slide_text; ?>&nbsp;
+														</div>
+														<?php
 															$carouselsection_index++;
 														endwhile; ?>
 													<?php endif; ?>

@@ -163,7 +163,7 @@ $field_repeater_column_array = array ( //=======================================
 			'min' => '',
 			'max' => '',
 			'layout' => 'block',
-			'button_label' => 'Add Image',
+			'button_label' => 'Add Slide',
 			'sub_fields' => array (
 				array ( // ---------------------------------- Field (Image)
 					'key' => 'field_column_carousel_image',
@@ -185,7 +185,73 @@ $field_repeater_column_array = array ( //=======================================
 					'maxlength' => '',
 					'readonly' => 0,
 					'disabled' => 0,
-				)
+				),
+				array ( // ---------------------------------- Field (Background Color)
+					'key' => 'field_column_carousel_slide_background_color_select',
+					'label' => 'Background Color',
+					'name' => 'background_color_carousel_slide',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '20',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => $section_background_color_types,
+					'default_value' => $section_background_color_dv,
+					'allow_null' => 0,
+					'multiple' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'return_format' => 'value',
+					'placeholder' => '',
+				),
+				array ( // ---------------------------------- Field (Background Size)
+					'key' => 'field_column_carousel_slide_background_size_select',
+					'label' => 'Background Size',
+					'name' => 'background_size_carousel_slide',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '20',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => $section_background_size_types,
+					'default_value' => $section_background_size_dv,
+					'allow_null' => 0,
+					'multiple' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'return_format' => 'value',
+					'placeholder' => '',
+				),
+				array (
+					'key' => 'field_column_carousel_slide_text_textfield',
+					'label' => 'Slide Text',
+					'name' => 'textfield_column_carousel_slide_text',
+					'type' => 'wysiwyg',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '100',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'tabs' => 'all',
+					'toolbar' => 'full',
+					'media_upload' => 1,
+				),
+	
+	
+	
+	
 			)
 		),
 
