@@ -517,10 +517,34 @@ SLICK CAROUSEL STYLES
 .slick-carousel-slide {
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: contain;
+  text-align: center;
+  vertical-align: middle;
 }
 
+.slick-dots {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
 
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {

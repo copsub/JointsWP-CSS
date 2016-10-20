@@ -20,6 +20,17 @@ $section_background_color_dv = array (
 	0 => 'transparent',
 );
 
+$section_background_size_types = array (
+	'auto' => 'Auto',
+	'cover' => 'Cover',
+	'contain' => 'Contain'
+);
+
+$section_background_size_dv = array (
+	0 => 'auto',
+);
+
+
 $column_type_selector_types = array ( // ---------------------------------- Options (Section Selector Types)
 	'normal' => 'Normal',
 	'carousel' => 'Carousel',
