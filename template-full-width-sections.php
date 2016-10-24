@@ -3,6 +3,17 @@
 Template Name: Full Width Sections
 */
 global $post;
+
+function interchanged_background_image($image){
+	// Prepare 3 sizes for different devices
+	$small = $image['sizes']['medium'];
+	$medium  = $image['sizes']['large'];
+	$large = $image['url'];
+
+	return("data-interchange='[$small, small], [$medium, medium], [$large, large]'");
+}
+
+
 ?>
 <?php get_header(); ?>
 
@@ -96,7 +107,7 @@ global $post;
 								<?php
 							break;							
 							case 'normal':
-								?><div class=" full-width-background wrapper_main_section_<?php echo $mainsection_index ?>"><?php
+								?><div <?php echo interchanged_background_image($background_image) ?> class=" full-width-background wrapper_main_section_<?php echo $mainsection_index ?>"><?php
 								// check for rows (sub repeater)
 								$overlaysection_index = 0;
 								if( have_rows('overlay') ):
@@ -128,7 +139,7 @@ global $post;
 							break;
 							case 'widgetarea':					
 								?>	
-								<div class=" full-width-background wrapper_main_section_<?php echo $mainsection_index ?>">
+								<div <?php echo interchanged_background_image($background_image) ?> class=" full-width-background wrapper_main_section_<?php echo $mainsection_index ?>">
 								<div class="row small-up-1 medium-up-2 large-up-3">
 									<?php if ( is_active_sidebar( 'widgetdynamicarea' . get_the_ID() . $mainsection_index ) ) : ?>
 									<?php dynamic_sidebar( 'widgetdynamicarea' . get_the_ID() . $mainsection_index ); ?>
@@ -139,7 +150,7 @@ global $post;
 							break;
 							case 'carousel':
 								?>
-								<div class=" full-width-background wrapper_main_section_<?php echo $mainsection_index ?>">
+								<div <?php echo interchanged_background_image($background_image) ?> class=" full-width-background wrapper_main_section_<?php echo $mainsection_index ?>">
 									<div class="row small-up-1 medium-up-2 large-up-3">
 										<div class="slick-carousel">
 											<?php

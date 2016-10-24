@@ -17,7 +17,6 @@ if( have_rows('mainsection', $post->ID ) ):
 		$margin_bottom = get_sub_field('margin_bottom');
 		?>
 			.wrapper_main_section_<?php echo $mainsection_index ?> {
-				background-image: url('<?php echo $background_image[url] ?>');
 				background-color: <?php echo $background_color; ?>;
 			}	
 			.wrapper_main_section_<?php echo $mainsection_index ?>:after {
